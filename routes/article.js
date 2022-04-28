@@ -2,6 +2,7 @@ const express = require("express");
 const {
   addArticle,
   getAllArticles,
+  removeArticle,
   getOneArticle,
 } = require("../controllers/article");
 
