@@ -3,6 +3,7 @@ const {
   addReport,
   getReports,
   getOneReport,
+  removeReport
 } = require("../controllers/report");
 
 const router = express.Router();
