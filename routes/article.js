@@ -10,5 +10,6 @@ const router = express.Router();
 router.post("/add-article", addArticle);
 router.get("/articles", getAllArticles);
 router.get("/a/:id", getOneArticle);
+router.get("/a/r/:id", removeArticle);
 
 module.exports = router;

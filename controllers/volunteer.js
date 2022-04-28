@@ -12,3 +12,15 @@ exports.addVolunteer = async (req, res) => {
     return res.send({ err: e });
   }
 };
+
+exports.removeVolunteer = async (req, res) => {
+  const { id } = req.params;
+  if (!id) return res.status(400).send("MISSING INFO");
+
+  try {
+    volunteer.findByIdAndDelete(id);
+    res.status({ ok: true });
+  } catch (e) {
+    return res.send({ err: e });
+  }
+};

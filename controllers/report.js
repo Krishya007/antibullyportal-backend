@@ -36,3 +36,15 @@ exports.getOneReport = async (req, res) => {
     return res.status(404).send(e);
   }
 };
+
+exports.removeReport = async (req, res) => {
+  const { id } = req.params;
+  if (!id) return res.status(400).send("MISSING INFO");
+
+  try {
+    report.findByIdAndDelete(id);
+    res.status({ ok: true });
+  } catch (e) {
+    return res.send({ err: e });
+  }
+};
