@@ -25,7 +25,7 @@ exports.removeVolunteer = async (req, res) => {
   }
 };
 
-exports.getVolunteers - async (req, res) => {
+exports.getVolunteers = async (req, res) => {
   try {
     res.send(await volunteer.find({}));
   } catch (e) {
