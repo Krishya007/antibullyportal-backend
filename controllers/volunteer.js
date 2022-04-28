@@ -18,7 +18,7 @@ exports.removeVolunteer = async (req, res) => {
   if (!id) return res.status(400).send("MISSING INFO");
 
   try {
-    volunteer.findByIdAndDelete(id);
+    await volunteer.findByIdAndDelete(id);
     return res.status({ ok: true });
   } catch (e) {
     return res.send({ err: e });
@@ -29,6 +29,6 @@ exports.getVolunteers = async (req, res) => {
   try {
     res.send(await volunteer.find({}));
   } catch (e) {
-    res.send({err: e});
+    res.send({ err: e });
   }
-}
+};

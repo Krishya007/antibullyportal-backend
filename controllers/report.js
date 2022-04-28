@@ -42,7 +42,7 @@ exports.removeReport = async (req, res) => {
   if (!id) return res.status(400).send("MISSING INFO");
 
   try {
-    report.findByIdAndDelete(id);
+    await report.findByIdAndDelete(id);
     res.status({ ok: true });
   } catch (e) {
     return res.send({ err: e });
