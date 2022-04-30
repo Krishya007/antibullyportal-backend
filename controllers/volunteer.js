@@ -13,18 +13,6 @@ exports.addVolunteer = async (req, res) => {
   }
 };
 
-exports.removeVolunteer = async (req, res) => {
-  const { id } = req.params;
-  if (!id) return res.status(400).send("MISSING INFO");
-
-  try {
-    await volunteer.findByIdAndDelete(id);
-    return res.status({ ok: true });
-  } catch (e) {
-    return res.send({ err: e });
-  }
-};
-
 exports.getVolunteers = async (req, res) => {
   try {
     res.send(await volunteer.find({}));

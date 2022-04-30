@@ -31,15 +31,3 @@ exports.getOneArticle = async (req, res) => {
     res.send({ err: e });
   }
 };
-
-exports.removeArticle = async (req, res) => {
-  const { id } = req.params;
-  if (!id) return res.status(400).send("MISSING INFO");
-
-  try {
-    await article.findByIdAndDelete(id);
-    res.status({ ok: true });
-  } catch (e) {
-    return res.send({ err: e });
-  }
-};
